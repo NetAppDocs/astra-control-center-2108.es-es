@@ -1,0 +1,11 @@
+---
+section: release-notes
+title: Notas de la versión
+url: "/release-notes/rn_overview.html"
+entries:
+- title: "¿Qué hay en esta versión de Astra Control Center"
+  url: "/release-notes/whats-new.html"
+- title: Problemas conocidos con esta versión
+  url: "/release-notes/known-issues.html"
+- title: Limitaciones conocidas de esta versión
+  url: "/release-notes/known-limitations.html"

@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: concepts/choose-class-and-size.html 
+keywords: service level, storage class, storage classes, pv size, persistent volume size, volume size, bandwidth, performance, persistent, volume, kubernetes, containers 
+summary: Astra Control Center admite solo las clases de almacenamiento de Trident con el almacenamiento de ONTAP. Debe comprender cómo la clase de almacenamiento y el tamaño de volumen persistente pueden ayudarle a cumplir sus objetivos de rendimiento. 
+---
+= Clases de almacenamiento y tamaño de volumen persistente
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/concepts/
+
+
+[role="lead"]
+Astra Control Center es compatible con ONTAP como almacenamiento back-end. Debe comprender cómo la clase de almacenamiento y el tamaño del volumen persistente (PV) pueden ayudarle a alcanzar sus objetivos de rendimiento.
+
+
+
+== Descripción general
+
+Astra Control Center admite solo las clases de almacenamiento de Trident con el respaldo del almacenamiento de ONTAP en este momento. Astra Control Center descubre y utiliza los recursos que ya se han puesto en marcha, incluidos ONTAP, Trident y las clases de almacenamiento asociadas.
+
+
+NOTE: Las clases de almacenamiento de Trident deben preconfigurarse fuera de Astra Control Center.
+
+
+
+== Clases de almacenamiento
+
+Cuando añade clústeres a Astra Control Center, se le pedirá que elija una de las clases de almacenamiento detectadas previamente para volúmenes persistentes. Los niveles de servicio de las clases de almacenamiento están diseñados para distintas necesidades de capacidad y ancho de banda. Estas clases de almacenamiento detectadas pueden utilizarse en Astra Control Center.
+
+
+
+== Rendimiento y tamaño de volúmenes persistentes
+
+Consulte la información de Trident, que ofrece comparaciones de costes y ejemplos que pueden ayudarle a comprender mejor cómo combinar un nivel de servicio con el tamaño de volumen para cumplir sus objetivos de rendimiento.
+
+
+
+== Obtenga más información
+
+* https://netapp-trident.readthedocs.io/en/stable-v21.01/dag/kubernetes/storage_configuration_trident.html["Documentación de Trident sobre la configuración del almacenamiento"^]
+

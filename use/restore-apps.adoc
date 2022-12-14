@@ -1,0 +1,56 @@
+---
+sidebar: sidebar 
+permalink: use/restore-apps.html 
+keywords: restore app, restoring an app, restore an app, restore 
+summary: Astra puede restaurar la configuración de sus aplicaciones y el almacenamiento persistente a partir de una copia Snapshot o una copia de seguridad. Los backups de almacenamiento persistente se transfieren del almacén de objetos, por lo que la restauración a partir de un backup existente se completará con la más rápida. 
+---
+= Restaurar aplicaciones
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Astra Control Center puede restaurar su aplicación a partir de una instantánea o una copia de seguridad. Los backups de almacenamiento persistente y las snapshots se transfieren del almacén de objetos, por lo que la restauración de una snapshot existente al mismo clúster será más rápida que otros métodos. Puede utilizar la interfaz de usuario de Astra o. https://docs.netapp.com/us-en/astra-automation-2108/index.html["La API Astra"^] para restaurar aplicaciones.
+
+
+NOTE: Si utiliza Helm para implantar aplicaciones, Astra Control Center requiere Helm versión 3. Se admite por completo la gestión y clonación de las aplicaciones implementadas con Helm 3 (o actualizadas de Helm 2 a Helm 3). Las aplicaciones implementadas con Helm 2 no son compatibles.
+
+
+NOTE: Si restaura en un clúster diferente, asegúrese de que el clúster utilice el mismo modo de acceso de volumen persistente (por ejemplo, ReadWriteMany). Se producirá un error en la operación de restauración si el modo de acceso al volumen persistente de destino es diferente.
+
+[NOTE]
+====
+Al crear un proyecto para alojar una aplicación en un clúster de OpenShift, se asigna un UID de SecurityContext al proyecto (o espacio de nombres de Kubernetes). Para habilitar Astra Control Center para proteger su aplicación y mover la aplicación a otro clúster o proyecto en OpenShift, debe agregar directivas que permitan que la aplicación se ejecute como cualquier UID. Por ejemplo, los siguientes comandos de la CLI de OpenShift otorgan las directivas adecuadas a una aplicación de WordPress.
+
+`oc new-project wordpress`
+`oc adm policy add-scc-to-group anyuid system:serviceaccounts:wordpress`
+`oc adm policy add-scc-to-user privileged -z default -n wordpress`
+
+====
+.Pasos
+. Haga clic en *aplicaciones* y, a continuación, en el nombre de una aplicación.
+. Haga clic en *Protección de datos*.
+. Si desea restaurar desde una instantánea, mantenga seleccionado el icono *instantáneas*. De lo contrario, haga clic en el icono *copias de seguridad* para restaurar desde una copia de seguridad.
+. Haga clic en la lista desplegable de la columna *acciones* para la instantánea o la copia de seguridad desde la que desea restaurar.
+. Haga clic en *Restaurar aplicación*.
+. *Detalles de la restauración*: Especifique los detalles de la restauración:
++
+** Introduzca un nombre y un espacio de nombres para la aplicación.
++
+
+NOTE: Si va a restaurar una aplicación que se ha eliminado, elija un nombre y espacio de nombres diferentes para la aplicación que el nombre original. Si el nombre de la aplicación restaurada es el mismo que la aplicación eliminada, la operación de restauración fallará.
+
+** Seleccione el clúster de destino de la aplicación.
+** Haga clic en *Revisión*.
+
+
+. *Resumen de restauración*: Revise los detalles sobre la acción de restauración y haga clic en *Restaurar*.
+
+
+.Resultado
+Astra Control Center restaura la aplicación en función de la información proporcionada.
+
+
+NOTE: Después de una operación de protección de datos (clonado, backup, restauración) y un cambio de tamaño posterior de volumen persistente, se demora hasta veinte minutos antes de que se muestre el tamaño del nuevo volumen en la interfaz de usuario. La operación de protección de datos se realiza correctamente en cuestión de minutos, y se puede utilizar el software de gestión para el back-end de almacenamiento para confirmar el cambio de tamaño del volumen.
