@@ -67,8 +67,7 @@ El Centro de control de Astra no admite aplicaciones que se implementen con oper
 
 NetApp ha validado algunas aplicaciones para garantizar la seguridad y la consistencia de las copias Snapshot y los backups.
 
-* https://docs.netapp.com/us-en/astra/learn/validated-vs-standard.html["Descubra la diferencia entre una aplicación validada y una aplicación estándar en Astra Control Service"^].
-* https://docs.netapp.com/us-en/astra-control-center/concepts/validated-vs-standard.html["Descubra la diferencia entre una aplicación validada y una aplicación estándar en Astra Control Center"^].
+* link:../concepts/validated-vs-standard.html["Descubra la diferencia entre una aplicación validada y una aplicación estándar en Astra Control Center"^].
 
 
 Independientemente del tipo de aplicación que utilice con Astra Control, siempre debe probar por usted mismo el flujo de trabajo de backup y restauración para garantizar que puede cumplir sus requisitos de recuperación ante desastres.
@@ -151,7 +150,7 @@ Puede añadir aplicaciones al clúster. O bien, si ya tiene algunas aplicaciones
 
 == Si quiere más información
 
-* https://docs.netapp.com/us-en/astra/index.html["Documentación de Astra Control Service"^]
+* https://docs.netapp.com/us-en/astra-control-service/index.html["Documentación de Astra Control Service"^]
 * https://docs.netapp.com/us-en/astra-control-center/index.html["Documentación de Astra Control Center"^]
 * https://docs.netapp.com/us-en/trident/index.html["Documentación de Astra Trident"^]
 * https://docs.netapp.com/us-en/astra-automation-2108/index.html["Utilice la API Astra"^]
